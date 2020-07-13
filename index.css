@@ -6,11 +6,71 @@ body, html {
 
 body {
     background-color: black;
+    color: white;
 }
 
 .wrapper {
     height: 100%;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 40px;
+}
+
+.wrapper .made-with {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.wrapper .made-with div {
+    margin: 0 5px;
+}
+
+.container {
+    font-size: 3em;
+    display: grid;
+    gap: 1em;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.container .content.hello {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: end;
+}
+
+.container .content.iam {
+    justify-self: end;
+    grid-column: 1 / 2;
+}
+
+.container .content.contact a {
+    color: inherit;
+}
+
+.container .content.contact {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: start;
+}
+
+.container .content.steps {
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.container .content.steps .step {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+}
+
+/* .wrapper {
+    height: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: auto 40px;
 }
@@ -61,6 +121,27 @@ body {
     }
 }
 
+.step {
+    opacity: 0;
+}
+
+.content-container .content-block.im {
+    grid-area: i;
+}
+
+.content-container .content-block.step {
+    grid-area: s;
+    column-span: 2 / -1;
+}
+
+.content-container .content-block.steps {
+    grid-column: 2 / -1;
+}
+
+.content-container .content-block.hello {
+    grid-area: h;
+}
+
 .content-container .content-block.full {
     grid-column: 1 / -1;
 }
@@ -71,6 +152,18 @@ body {
 
 .content-container .content-block.two {
     grid-column: span 2;
+}
+
+.content-container .content-block.three {
+    grid-column: span 3;
+}
+
+.content-container .content-block.four {
+    grid-column: span 4;
+}
+
+.content-container .content-block.five {
+    grid-column: span 5;
 }
 
 .made-with>.made-width-text {
@@ -93,16 +186,19 @@ body {
     color: black;
 }
 
-.show-who .who {
-    color: #dcd427;
+.who {
+    background-color: #dcd427;
+    color: #000;
 }
 
-.show-what .what {
-    color: #ff3333;
+.what {
+    background-color: #ff3333;
+    color: #000;
 }
 
-.show-where .where {
-    color: #0092cc;
+.where {
+    background-color: #0092cc;
+    color: #000;
 }
 
 .show-contact .contact {
@@ -111,4 +207,4 @@ body {
 
 .show-contact .nav-down {
     color: black;
-}
+} */
