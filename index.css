@@ -1,0 +1,114 @@
+body, html {
+    font-family: 'Roboto Mono', monospace;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+.wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 40px;
+}
+
+.wrapper>footer {
+    align-self: center;
+}
+
+.made-with {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    color: #666;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.content-container {
+    justify-content: center;
+    align-content: center;
+    color: rgb(27, 25, 24);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 3px;
+    grid-auto-rows: 75px;
+    justify-items: center;
+    align-items: center;
+}
+
+.content-container .nav {
+    cursor: pointer;
+}
+
+.content-container .content-block a {
+    color: inherit;
+}
+
+.content-container .content-block {
+    font-size: 3em;
+}
+
+@media screen and (max-width: 360px) {
+    .content-container .content-block {
+        font-size: 2em;
+    }
+}
+
+.content-container .content-block.full {
+    grid-column: 1 / -1;
+}
+
+.content-container .content-block.one {
+    grid-column: span 1;
+}
+
+.content-container .content-block.two {
+    grid-column: span 2;
+}
+
+.made-with>.made-width-text {
+    line-height: 20px;
+}
+
+.made-with>div {
+    margin: 0 3px;
+}
+
+.made-with img {
+    display: block;
+}
+
+.show-hello .hello {
+    color: white;
+}
+
+.show-hello .nav-up {
+    color: black;
+}
+
+.show-who .who {
+    color: #dcd427;
+}
+
+.show-what .what {
+    color: #ff3333;
+}
+
+.show-where .where {
+    color: #0092cc;
+}
+
+.show-contact .contact {
+    color: #22af4b;
+}
+
+.show-contact .nav-down {
+    color: black;
+}
