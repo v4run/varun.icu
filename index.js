@@ -31,6 +31,6 @@
                 });
             }
         }
-        cycleClass();
+        setTimeout(cycleClass, 1500);
     }
 })()
