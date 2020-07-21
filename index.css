@@ -16,11 +16,17 @@ body {
     grid-template-rows: 1fr 40px;
 }
 
-.wrapper .made-with {
+.wrapper .container .made-with {
+    grid-column: 2 / -1;
+    justify-content: start;
     display: flex;
-    align-content: center;
-    justify-content: center;
-    align-self: center;
+    align-items: start;
+    align-self: end;
+    font-size: .35em;
+}
+
+.wrapper .container .made-with div {
+    margin-top: 1em;
 }
 
 .wrapper .made-with div {
@@ -30,23 +36,23 @@ body {
 .container {
     font-size: 3em;
     display: grid;
-    gap: 1em;
+    gap: 0.5em;
     height: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 100px 1fr;
+    grid-template-columns: 1fr 1fr 10fr;
+    grid-template-rows: 1fr 100px 45px 1fr;
 }
 
 .container .content.hello {
     font-size: 1.25em;
     font-family: 'Shadows Into Light', cursive;
-    grid-column: 1 / -1;
-    justify-self: center;
+    grid-column: 2 / -1;
+    justify-self: start;
     align-self: end;
 }
 
 .container .content.iam {
-    justify-self: end;
-    grid-column: 1 / 2;
+    justify-self: start;
+    grid-column: 2 / 3;
 }
 
 .container .content.contact a {
@@ -55,27 +61,22 @@ body {
 
 .container .content.contact {
     font-size: 0.75em;
-    grid-column: 1 / -1;
-    justify-self: center;
+    grid-column: 2 / -1;
+    justify-self: start;
     align-self: start;
 }
 
-.container .content.steps {
+.container .content .steps {
     font-weight: bold;
     position: relative;
     text-align: center;
-    grid-column: 2 / -1;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(1, minmax(70px, 1fr));
+    width: 550px;
 }
 
-.container .content.steps .step {
+.container .content .steps .step {
     background-color: #fff;
     color: #000;
     opacity: 0;
-    grid-row: 1 / -1;
-    grid-column: 1 / -1;
     border-radius: 5px;
     width: 550px;
     -moz-transition: all 0.3s ease-in-out;
@@ -89,7 +90,7 @@ body {
     position: absolute;
 }
 
-.container .content.steps .step.front {
+.container .content .steps .step.front {
     -moz-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
@@ -98,7 +99,7 @@ body {
     opacity: 1;
 }
 
-.container .content.steps .step.bottom {
+.container .content .steps .step.bottom {
     -moz-transform: rotateX(120deg);
     -ms-transform: rotateX(120deg);
     -webkit-transform: rotateX(120deg);
@@ -107,7 +108,7 @@ body {
     opacity: 0;
 }
 
-.container .content.steps .step.back {
+.container .content .steps .step.back {
     -moz-transform: rotateX(-120deg);
     -ms-transform: rotateX(-120deg);
     -webkit-transform: rotateX(-120deg);
@@ -116,29 +117,26 @@ body {
     opacity: 0;
 }
 
-.container .content.steps .step.who {
+.container .content .steps .step.who {
     background-color: #dcd427;
 }
 
-.container .content.steps .step.what {
+.container .content .steps .step.what {
     background-color: #f30a49;
 }
 
-.container .content.steps .step.where {
+.container .content .steps .step.where {
     background-color: #21e6c1;
 }
 
 @media (max-width: 1150px) {
     .container {
-        gap: 0.5em;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 100px 100px 45px 1fr;
     }
-    .container .content.iam {
+    .wrapper .container .content {
         grid-column: 1 / -1;
         justify-self: center;
-    }
-    .container .content.steps {
-        grid-column: 1 / -1;
-        justify-items: center;
     }
 }
 
@@ -146,7 +144,7 @@ body {
     .steps {
         font-size: .75em;
     }
-    .container .content.steps .step {
+    .container .content .steps, .container .content .steps .step {
         width: 411px;
     }
 }
